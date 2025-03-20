@@ -16,8 +16,8 @@ export default function Card({ todo }: Props) {
   const { title, completed } = todo;
   return (
     <View>
-      <Text>{title}</Text>
-      {completed && <Text>Completed</Text>}
+      <Text testID="card-text">{title}</Text>
+      {completed && <Text testID="card-completed">Completed</Text>}
     </View>
   );
 }

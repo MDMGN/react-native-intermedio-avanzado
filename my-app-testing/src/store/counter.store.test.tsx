@@ -21,5 +21,6 @@ describe("Probando counter.store", () => {
     fireEvent.press(getByTestId("counter-button"));
     fireEvent.press(getByTestId("counter-button"));
     expect(getByTestId("counter-text")).toHaveTextContent("2");
+    expect(getByTestId("counter-text"));
   });
 });
