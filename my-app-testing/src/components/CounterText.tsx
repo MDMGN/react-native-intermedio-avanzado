@@ -4,6 +4,7 @@ import useCounter from "../store/counter.store";
 
 export default function CounterText() {
   const count = useCounter((state) => state.count);
+
   console.log("Render desde CounterText");
   return (
     <View>
