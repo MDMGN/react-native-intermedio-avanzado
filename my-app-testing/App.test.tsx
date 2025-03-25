@@ -11,7 +11,7 @@ import App from "./App";
 
 describe("Probando App.tsx", () => {
   it("Probando counter.store", () => {
-    const { result } = renderHook(useCounter);
+    const { result } = renderHook(() => useCounter());
     expect(result.current.count).toBe(0);
   });
 

@@ -1,7 +1,7 @@
 import Button from "../components/Button";
 import CounterText from "../components/CounterText";
-import { sum } from "../helpers";
 import { fireEvent, render } from "@testing-library/react-native";
+import { sum } from "../helpers";
 
 describe("Mi primera prueba", () => {
   test("Probando una función de suma", () => {

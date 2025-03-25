@@ -40,5 +40,6 @@ describe("Probando Cards.tsx", () => {
       completed: true,
     },
   ];
+
   (getTODOS as jest.Mock).mockResolvedValue(mockTodos);
 });
