@@ -1,9 +1,10 @@
-import { render, screen } from "@testing-library/react-native";
+import { act, renderHook, waitFor } from "@testing-library/react-native";
 import { getTODOS } from "../helpers";
-import Cards from "./Cards";
+import useTodos from "./useTodos";
 
 jest.mock("../helpers.ts");
-describe("Probando Cards.tsx", () => {
+
+describe("useTODOS hook Test", () => {
   const mockTodos = [
     {
       userId: 1,
@@ -29,27 +30,15 @@ describe("Probando Cards.tsx", () => {
       title: "qui ullam ratione quibusdam voluptatem quia omnis",
       completed: false,
     },
-    {
-      userId: 1,
-      id: 7,
-      title: "illo expedita consequatur quia in",
-      completed: false,
-    },
-    {
-      userId: 1,
-      id: 8,
-      title: "quo adipisci enim quam ut ab",
-      completed: true,
-    },
   ];
-
   (getTODOS as jest.Mock).mockResolvedValue(mockTodos);
+  test("data state Test", async () => {
+    const { result } = renderHook(useTodos);
 
-  it("Renderizado de Card.tsx", async () => {
-    render(<Cards />);
+    /* await waitFor(() => result.current.data !== undefined); */
 
-    for (const todo of mockTodos) {
-      expect(await screen.findByText(todo.title)).toBeTruthy();
-    }
+    await act(async () => await getTODOS());
+
+    expect(result.current.data).toEqual(mockTodos);
   });
 });
