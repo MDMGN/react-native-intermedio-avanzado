@@ -31,13 +31,15 @@ describe("useTODOS hook Test", () => {
       completed: false,
     },
   ];
+
   (getTODOS as jest.Mock).mockResolvedValue(mockTodos);
+
   test("data state Test", async () => {
-    const { result } = renderHook(useTodos);
+    const { result } = renderHook(() => useTodos());
 
-    /* await waitFor(() => result.current.data !== undefined); */
+    await waitFor(() => result.current.data !== undefined);
 
-    await act(async () => await getTODOS());
+    /*  await act(async () => await getTODOS()); */
 
     expect(result.current.data).toEqual(mockTodos);
   });
