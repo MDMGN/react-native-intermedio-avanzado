@@ -10,7 +10,6 @@ describe("useFavorites.tsx Testing", () => {
 
   it("favorites === []", () => {
     const { result } = renderHook(useFavorites, { wrapper });
-
     expect(result.current.favorites).toEqual([]);
   });
 });
