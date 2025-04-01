@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
-import { View, FlatList } from "react-native";
-import Card, { Todo } from "./Card";
-import { getTODOS } from "../helpers";
+import { FlatList, View } from "react-native";
+import Card from "./Card";
+import { FlashList } from "@shopify/flash-list";
 import useTodos from "../hooks/useTodos";
 
 export default function Cards() {
-const {data} = useTodos()
+  const { data } = useTodos();
 
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <FlatList
         data={data}
         keyExtractor={({ id }) => id + ""}

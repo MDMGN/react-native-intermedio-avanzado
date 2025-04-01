@@ -5,6 +5,9 @@ import useTodos from "./useTodos";
 jest.mock("../helpers.ts");
 
 describe("useTODOS hook Test", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
   const mockTodos = [
     {
       userId: 1,

@@ -15,8 +15,15 @@ type Props = {
 export default function Card({ todo }: Props) {
   const { title, completed } = todo;
   return (
-    <View>
-      <Text testID="card-text">{title}</Text>
+    <View
+      style={{
+        height: 300,
+        width: "80%",
+      }}
+    >
+      <Text testID="card-text" style={{ color: "#000" }}>
+        {title}
+      </Text>
       {completed && <Text testID="card-completed">Completed</Text>}
     </View>
   );

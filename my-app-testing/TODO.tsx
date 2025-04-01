@@ -6,7 +6,7 @@ import { FavoritesProvider } from "./src/context/FavoritesContext";
 export default function TODO() {
   return (
     <FavoritesProvider>
-      <View>
+      <View style={{ flex: 1 }}>
         <Cards />
       </View>
     </FavoritesProvider>

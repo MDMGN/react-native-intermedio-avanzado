@@ -2,6 +2,7 @@ import { StyleSheet, View } from "react-native";
 import CounterText from "./src/components/CounterText";
 import Button from "./src/components/Button";
 import { useEffect, useState } from "react";
+import TODO from "./TODO";
 
 export default function App() {
   const [show, setShow] = useState(false);
@@ -13,7 +14,7 @@ export default function App() {
   }, []);
   return (
     <View style={styles.container}>
-      {show && <CounterText />}
+      <CounterText />
       <Button />
     </View>
   );
